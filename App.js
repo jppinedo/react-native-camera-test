@@ -5,8 +5,8 @@
  * @format
  * @flow
  */
-
 import React, {Fragment} from 'react';
+import { RNCamera } from 'react-native-camera';
 import {
   SafeAreaView,
   StyleSheet,
@@ -20,11 +20,29 @@ import {
   Header,
   LearnMoreLinks,
   Colors,
-  DebugInstructions,
-  ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
 const App = () => {
+  return (
+    <Fragment>
+      <View style={styles.container}>
+        <RNCamera
+          ref={ref => {
+            this.camera = ref;
+          }}
+          style={{
+            flex: 1,
+            width: '100%',
+          }}
+        >
+        </RNCamera>
+       </View>
+    </Fragment>
+  );
+};
+
+
+const ReactDemo = () => {
   return (
     <Fragment>
       <StatusBar barStyle="dark-content" />
@@ -39,6 +57,16 @@ const App = () => {
             </View>
           )}
           <View style={styles.body}>
+            <RNCamera
+            ref={ref => {
+              this.camera = ref;
+            }}
+            style={{
+              flex: 1,
+              width: '100%',
+            }}
+          >
+          </RNCamera>
             <LearnMoreLinks />
           </View>
         </ScrollView>
@@ -84,6 +112,28 @@ const styles = StyleSheet.create({
     paddingRight: 12,
     textAlign: 'right',
   },
+
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  },
+  jp: {
+    fontSize: 30,
+    textAlign: 'center',
+    margin: 20,
+  }
 });
 
 export default App;

@@ -27,6 +27,9 @@ target 'ReactTest' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
+
+  pod 'react-native-camera', :path => '../node_modules/react-native-camera'
+
   target 'ReactTestTests' do
     inherit! :search_paths
     # Pods for testing
