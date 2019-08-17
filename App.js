@@ -22,6 +22,10 @@ import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
 
+barcodeRecognized = ({ barcodes }) => {
+  barcodes.forEach(barcode => console.warn(barcode.data))
+};
+
 const App = () => {
   return (
     <Fragment>
@@ -34,6 +38,7 @@ const App = () => {
             flex: 1,
             width: '100%',
           }}
+          onGoogleVisionBarcodesDetected={this.barcodeRecognized}
         >
         </RNCamera>
        </View>
